@@ -12,9 +12,9 @@ Delightful NodeJS Web Api Framework powered by KoaJs and TypeScript
 ## Opensources
 
 * Plumier 
-* My Own IoC Container (Light weight IoC Container)
-* My Own Reflect (Reflection api untuk NodeJS)
-* Benalu (Dynamic proxy)
+* My Own IoC Container 
+* My Own Reflect 
+* Benalu 
 
 
 ---
