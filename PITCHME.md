@@ -1,17 +1,17 @@
 # Plumier
 
-### Delightful NodeJS Web Api Framework powered by KoaJs and TypeScript
+Delightful NodeJS Web Api Framework powered by KoaJs and TypeScript
 
 ---
 
-# I Ketut Sandiarsa
+## I Ketut Sandiarsa
 ### Developer VetVision
 ### Opensource Contributor
 
 ---
 ## Opensources
 
-* Plumier
+* Plumier 
 * My Own IoC Container (Light weight IoC Container)
 * My Own Reflect (Reflection api untuk NodeJS)
 * Benalu (Dynamic proxy)
