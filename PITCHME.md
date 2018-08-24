@@ -67,7 +67,10 @@ request body:
 ```typescript
 @domain()
 class LoginUser {
-  constructor(public username:string, public password:string){}
+  constructor(
+    public username:string, 
+    public password:string
+  ){}
 }
 
 class UsersController {
@@ -77,13 +80,6 @@ class UsersController {
   }
 }
 ```
-
-```
-POST /users/login
-request body:
-{ username: "johndoe", password: "secret123" }
-```
-
 ---
 
 ### Built-in Validation
@@ -127,9 +123,9 @@ class UsersController {
 }
 ```
 
+@[2-9](GET /users/login)
 @[7](Setup authorization)
-@[2](Boleh di akses oleh public)
-@[11](Hanya SuperAdmin yang bisa mengakses)
+@[11](GET /users/deactivate)
 ---
 
 ### Parameter Authorization
@@ -150,3 +146,9 @@ class User {
 @[6](Hanya SuperAdmin yang bisa mengubah nilainya)
 @[8](Hanya Admin dan SuperAdmin yang bisa mengubah nilainya)
 ---
+
+### Implementasi Refresh Token dengan Plumier
+
+---
+
+
