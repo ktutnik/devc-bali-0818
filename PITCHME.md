@@ -1,30 +1,30 @@
-# Implementasi Refresh Token dengan Plumier
+## Plumier
+Delightful NodeJS Web Api Framework powered by KoaJs and TypeScript
 
 I Ketut Sandiarsa
 Developer VetVision
 
 ---
 
-## Plumier
-Delightful NodeJS Web Api Framework powered by KoaJs and TypeScript
+### Plumier
 * Fokus pada *development happyness*
 * Performance (KoaJS) [bit.ly/PlumBench](bit.ly/PlumBench)
 * TypeScript
 
 ---
 
-## Framework Sejenis
+### Framework Sejenis
 * LoopBack 4
 * NestJS
 * TypeStack/Routing Controller
 
 ---
 
-## Fitur Yang Membedakan Dengan Framework Lain
+### Fitur Yang Membedakan Dengan Framework Lain
 
 ---
 
-## Parameter Binding
+### Parameter Binding
 
 Reflection api membuat penggunaan decorator menjadi minimal
 
@@ -42,7 +42,7 @@ GET /users/get?id=<string>
 
 ---
 
-## Parameter Binding 
+### Parameter Binding 
 
 ```typescript
 class UsersController {
@@ -61,7 +61,7 @@ request body:
 
 ---
 
-## Domain Model Binding
+### Domain Model Binding
 
 ```typescript
 @domain()
@@ -85,7 +85,7 @@ request body:
 
 ---
 
-## Built-in Validation
+### Built-in Validation
 
 ```typescript
 class User {
@@ -105,7 +105,7 @@ class User {
 
 ---
 
-## Built-In Authorization
+### Built-In Authorization
 
 ```typescript
 class UsersController {
@@ -132,7 +132,7 @@ class UsersController {
 
 ---
 
-## Parameter Authorization + Validation
+### Parameter Authorization + Validation
 
 ```typescript
 class User {
