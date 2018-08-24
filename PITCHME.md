@@ -31,14 +31,14 @@ Developer VetVision
 
 ```typescript
 class UsersController {
-  get(id:string){
+  get(id:number, active:boolean, date:Date){
 
   }
 }
 ```
 
 ```
-GET /users/get?id=<string>
+GET /users/get?id=121&active=YES&date=2018-1-1
 ```
 
 ---
@@ -85,20 +85,21 @@ class UsersController {
 ### Built-in Validation
 
 ```typescript
+@domain()
 class User {
   constructor(
     public name:string,
     @val.email()
     @val.unique()
     public email:string,
+    @val.before()
+    public birthDate:Date,
     public address:string,
-    public isActive:boolean,
-    public role: "User" | "Admin" | "SuperAdmin"
   ){}
 }
 ```
 
-@[4-5](Decorator validation)
+@[5-6,8](Decorator validation)
 
 ---
 
@@ -125,12 +126,13 @@ class UsersController {
 
 @[2-9](GET /users/login)
 @[7](Setup authorization)
-@[11](GET /users/deactivate)
+@[11-15](GET /users/deactivate)
 ---
 
 ### Parameter Authorization
 
 ```typescript
+@domain()
 class User {
   constructor(
     public name:string,
@@ -143,8 +145,7 @@ class User {
   ){}
 }
 ```
-@[6](Hanya SuperAdmin yang bisa mengubah nilainya)
-@[8](Hanya Admin dan SuperAdmin yang bisa mengubah nilainya)
+@[7,9](Authorization)
 ---
 
 ### Implementasi Refresh Token dengan Plumier
