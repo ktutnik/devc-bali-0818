@@ -1,0 +1,15 @@
+{
+  "name": "user-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon src/index"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@plumjs/mongoose": "^0.1.1",
+    "@plumjs/plumier": "^0.1.1",
+    "@types/jsonwebtoken": "^7.2.8",
+    "argon2": "^0.19.3",
+    "jsonwebtoken": "^8.3.0"
+  }
+}

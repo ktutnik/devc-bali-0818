@@ -27,6 +27,12 @@ Developer VetVision
 
 ---
 
+### Static Analysis
+
+![Static-Analisis](assets/images/static-analysis.png)
+
+---
+
 ### Parameter Binding
 
 ```typescript
@@ -66,7 +72,7 @@ request body:
 
 ```typescript
 @domain()
-class LoginUser {
+class Auth {
   constructor(
     public username:string, 
     public password:string
@@ -75,7 +81,7 @@ class LoginUser {
 
 class UsersController {
   @route.post()
-  login(data:LoginUser){
+  login(data:Auth){
 
   }
 }
@@ -148,8 +154,27 @@ class User {
 @[7,9](Authorization)
 ---
 
-### Implementasi Refresh Token dengan Plumier
+### Mongoose Helper 
 
+```typescript
+@collection()
+class User {
+  constructor(
+    public name:string,
+    public email:string,
+    public address:string,
+    @authorize.role("Admin", "SuperAdmin")
+    public isActive:boolean,
+    @authorize.role("SuperAdmin")
+    public role: "User" | "Admin" | "SuperAdmin"
+  ){}
+}
+
+const UserModel = model(User)
+```
+
+@[1](Decorator penanda)
+@[14](Membuat instance Mongoose model)
 ---
 
 
