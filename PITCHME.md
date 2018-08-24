@@ -1,7 +1,10 @@
 ## Plumier
 Delightful NodeJS Web Api Framework powered by KoaJs and TypeScript
 
+---
+
 I Ketut Sandiarsa
+
 Developer VetVision
 
 ---
@@ -20,13 +23,11 @@ Developer VetVision
 
 ---
 
-### Fitur Yang Membedakan Dengan Framework Lain
+### Fitur-fitur Plumier
 
 ---
 
 ### Parameter Binding
-
-Reflection api membuat penggunaan decorator menjadi minimal
 
 ```typescript
 class UsersController {
@@ -124,12 +125,11 @@ class UsersController {
 
   }
 }
+```
 
 @[7](Setup authorization)
 @[2](Boleh di akses oleh public)
 @[11](Hanya SuperAdmin yang bisa mengakses)
-```
-
 ---
 
 ### Parameter Authorization + Validation
@@ -146,14 +146,9 @@ class User {
     public role: "User" | "Admin" | "SuperAdmin"
   ){}
 }
-
-class UserController {
-  @route.put()
-  modify(data:User){
-
-  }
-}
 ```
+@[6](Hanya SuperAdmin yang bisa mengubah nilainya)
+@[8](Hanya Admin dan SuperAdmin yang bisa mengubah nilainya)
 ---
 
 ## Tips!
