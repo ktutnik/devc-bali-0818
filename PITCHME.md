@@ -132,7 +132,7 @@ class UsersController {
 @[11](Hanya SuperAdmin yang bisa mengakses)
 ---
 
-### Parameter Authorization + Validation
+### Parameter Authorization
 
 ```typescript
 class User {
