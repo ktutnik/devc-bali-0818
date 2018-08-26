@@ -221,7 +221,7 @@ new Plumier()
 
 ### Contoh Restful API 
 
-Membuat NodeJS Restful API untuk memanajemen user
+Membuat NodeJS Restful API untuk manajemen user data
 
 Video [bit.ly/PlumRestful]
 
@@ -229,13 +229,13 @@ Video [bit.ly/PlumRestful]
 
 ### Routes
 
-| Method | Route                      | Access   |
-| ------ | -------------------------- | -------- |
-| `POST` | `/users/login`             | P        |
-| `POST` | `/users`                   | P        |
-| `GET`  | `/users?offset=0&limit=20` | A, SA    |
-| `GET`  | `/users/:id`               | A, SA, O |
-| `PUT`  | `/users/:id`               | A, SA, O |
+| Method | Route                      |
+| ------ | -------------------------- |
+| `POST` | `/users/login`             |
+| `POST` | `/users`                   |
+| `GET`  | `/users?offset=0&limit=20` |
+| `GET`  | `/users/:id`               |
+| `PUT`  | `/users/:id`               |
 
 ---?code=demo/package.json&lang=json&title=package.json
 
@@ -244,5 +244,14 @@ Video [bit.ly/PlumRestful]
 ---?code=demo/src/index.ts&lang=typescript&title=Entry Point
 
 ---?code=demo/src/model/user.ts&lang=typescript&title=Domain Model
+@[4](Role enum)
+@[6-19](User domain model - Persistent)
+@[21-22](Mongoose projection dan Model)
+@[24-30](Current login user domain model)
 
 ---?code=demo/src/controller/user-controller.ts&lang=typescript&title=Controller
+@[11-22](POST /users/login)
+@[24-33](POST /users)
+@[35-41](GET /users?offset=0&limit=20)
+@[43-48](GET /users/:id)
+@[50-61](PUT /users/:id)
