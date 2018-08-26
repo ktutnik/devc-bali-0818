@@ -13,6 +13,7 @@ Developer VetVision
 * Fokus pada *development happiness*
   * Built-in validation
   * Built-in authorization
+* Mebuat web api dengan cepat robust dan aman, tanpa bantuan generator
 * Performance (KoaJS) [bit.ly/PlumBench](https://bit.ly/PlumBench)
 
 ---
