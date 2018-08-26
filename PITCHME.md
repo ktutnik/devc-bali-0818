@@ -10,9 +10,8 @@ Developer VetVision
 ---
 
 ### Plumier
-* Fokus pada *development happyness*
+* Fokus pada *development happiness*
 * Performance (KoaJS) [bit.ly/PlumBench](bit.ly/PlumBench)
-* TypeScript
 
 ---
 
@@ -43,6 +42,7 @@ Developer VetVision
 
 ```typescript
 class UsersController {
+  @route.get()
   get(id:number, active:boolean, date:Date){
 
   }
@@ -60,7 +60,7 @@ GET /users/get?id=121&active=YES&date=2018-1-1
 ```typescript
 class UsersController {
   @route.post()
-  login(username:string, password:string){
+  save(id:number, active:boolean, date:Date){
 
   }
 }
@@ -68,8 +68,8 @@ class UsersController {
 
 ```
 POST /users/login
-request body:
-{ username: "johndoe", password: "secret123" }
+body:
+{ "id": "123", "active": "YES", "date":"2018-1-1" }
 ```
 
 ---
@@ -78,19 +78,26 @@ request body:
 
 ```typescript
 @domain()
-class Auth {
+class Domain {
   constructor(
-    public username:string, 
-    public password:string
+    public id:number, 
+    public active:boolean, 
+    public date:Date
   ){}
 }
 
 class UsersController {
   @route.post()
-  login(data:Auth){
+  save(@bind.body() data:Domain){
 
   }
 }
+```
+
+```
+POST /users/login
+body:
+{ "id": "123", "active": "YES", "date":"2018-1-1" }
 ```
 ---
 
