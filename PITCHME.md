@@ -188,19 +188,15 @@ const UserModel = model(User)
 ```typescript
 export class Resolver implements DependencyResolver {
     container: Container
-    constructor(){
-        const container = new Container()
-        container.register(PetRepository)
-        container.register(ClientRepository)
-        container.register(ClientController)
-        container.register(ClientPetController)
-        this.container = container
-    }
+    constructor(){ /* Registration */    }
     resolve(type: Class) {
         return this.container.resolve(type)
     }
 }
 
+```
+```typescript
+//entry point
 new Plumier()
     .set(new RestfulApiFacility())
     .set({ dependencyResolver: new Resolver() })
@@ -208,9 +204,6 @@ new Plumier()
     .then(x => x.listen(8000))
     .catch(x => console.error(x))
 ```
-@[1](Custom resolver)
-@[4-8](Component registration)
-@[18](Composition root)
 ---
 
 
