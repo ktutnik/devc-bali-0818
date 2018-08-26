@@ -11,7 +11,9 @@ Developer VetVision
 
 ### Plumier
 * Fokus pada *development happiness*
-* Performance (KoaJS) [bit.ly/PlumBench](bit.ly/PlumBench)
+  * Built-in validation
+  * Built-in authorization
+* Performance (KoaJS) [bit.ly/PlumBench](https://bit.ly/PlumBench)
 
 ---
 
@@ -228,7 +230,7 @@ Membuat NodeJS Restful API untuk manajemen user data
 * Authorization
 * MongoDB
 
-Video [bit.ly/PlumRestful]
+Video [bit.ly/PlumRestful](https://bit.ly/PlumRestful)
 
 ---
 
