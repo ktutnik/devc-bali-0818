@@ -219,46 +219,36 @@ new Plumier()
 ```
 ---
 
-### Contoh Aplikasi 
+### Contoh Restful API 
 
-| Desc                    | Method   | Route                      | Access             |
-| ----------------------- | -------- | -------------------------- | ------------------------ |
-| Login                   | `POST`   | `/users/login`             | Public                   |
-| Register user           | `POST`   | `/users`                   | Public                   |
-| Get all user (paginate) | `GET`    | `/users?offset=0&limit=20` | Admin, SuperAdmin        |
-| Get user by id          | `GET`    | `/users/:id`               | Admin, SuperAdmin, Owner |
-| Modify user             | `PUT`    | `/users/:id`               | Admin, SuperAdmin, Owner |
-| Delete user             | `DELETE` | `/users/:id`               | Admin, SuperAdmin, Owner |
-
----
-
-### package.json
-
-+++?code=demo/package.json&lang=json&title=PackageJSON
+| Method   | Route                      | Access             |
+| -------- | -------------------------- | ------------------------ |
+| `POST`   | `/users/login`             | Public                   |
+| `POST`   | `/users`                   | Public                   |
+| `GET`    | `/users?offset=0&limit=20` | Admin, SuperAdmin        |
+| `GET`    | `/users/:id`               | Admin, SuperAdmin, Owner |
+| `PUT`    | `/users/:id`               | Admin, SuperAdmin, Owner |
+| `DELETE` | `/users/:id`               | Admin, SuperAdmin, Owner |
 
 ---
 
-### tsconfig.json
-
-+++?code=demo/tsconfig.json&lang=json&title=TsConfig
++++?code=demo/package.json&lang=json&title=package.json
 
 ---
 
-### Entry Point
++++?code=demo/tsconfig.json&lang=json&title=tsconfig.json
+
+---
 
 +++?code=demo/src/index.ts&lang=typescript&title=Entry Point
 
 ---
 
-### Domain Model
-
 +++?code=demo/src/model/user.ts&lang=typescript&title=Domain Model
 
 ---
 
-### Controller
-
-+++?code=demo/src/controller/user-controller.ts&lang=typescript&title=Domain Model
++++?code=demo/src/controller/user-controller.ts&lang=typescript&title=Controller
 
 
 
