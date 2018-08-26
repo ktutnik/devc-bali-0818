@@ -221,13 +221,13 @@ new Plumier()
 
 ### Contoh Restful API 
 
-| Method   | Route                      | Access             |
-| -------- | -------------------------- | ------------------------ |
-| `POST`   | `/users/login`             | Public                   |
-| `POST`   | `/users`                   | Public                   |
-| `GET`    | `/users?offset=0&limit=20` | Admin, SuperAdmin        |
-| `GET`    | `/users/:id`               | Admin, SuperAdmin, Owner |
-| `PUT`    | `/users/:id`               | Admin, SuperAdmin, Owner |
+| Method   | Route                      | 
+| -------- | -------------------------- | 
+| `POST`   | `/users/login`             | 
+| `POST`   | `/users`                   | 
+| `GET`    | `/users?offset=0&limit=20` | 
+| `GET`    | `/users/:id`               | 
+| `PUT`    | `/users/:id`               | 
 
 ---?code=demo/package.json&lang=json&title=package.json
 
