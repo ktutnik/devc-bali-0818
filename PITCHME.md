@@ -67,7 +67,7 @@ class UsersController {
 ```
 
 ```
-POST /users/login
+POST /users/save
 body:
 { "id": "123", "active": "YES", "date":"2018-1-1" }
 ```
@@ -88,14 +88,14 @@ class Domain {
 
 class UsersController {
   @route.post()
-  save(@bind.body() data:Domain){
+  save(type:string, @bind.body() data:Domain){
 
   }
 }
 ```
 
 ```
-POST /users/login
+POST /users/save?type=car
 body:
 { "id": "123", "active": "YES", "date":"2018-1-1" }
 ```
@@ -122,6 +122,19 @@ class User {
 
 ---
 
+### Built-in Validation
+
+```typescript
+class UsersController {
+  @route.get()
+  get(@val.mongoId() id:string){
+
+  }
+}
+```
+
+---
+
 ### Built-In Authorization
 
 ```typescript
@@ -129,10 +142,7 @@ class UsersController {
   @authorize.public()
   @route.post()
   login(username:string, password:string){
-    //other logic
-    return {
-      token: sign({id, role}, SECRET)
-    }
+
   }
 
   @authorize.role("SuperAdmin")
@@ -142,10 +152,6 @@ class UsersController {
   }
 }
 ```
-
-@[2-9](GET /users/login)
-@[7](Setup authorization)
-@[11-15](GET /users/deactivate)
 ---
 
 ### Parameter Authorization
@@ -212,5 +218,47 @@ new Plumier()
     .catch(x => console.error(x))
 ```
 ---
+
+### Contoh Aplikasi 
+
+| Desc                    | Method   | Route                      | Access             |
+| ----------------------- | -------- | -------------------------- | ------------------------ |
+| Login                   | `POST`   | `/users/login`             | Public                   |
+| Register user           | `POST`   | `/users`                   | Public                   |
+| Get all user (paginate) | `GET`    | `/users?offset=0&limit=20` | Admin, SuperAdmin        |
+| Get user by id          | `GET`    | `/users/:id`               | Admin, SuperAdmin, Owner |
+| Modify user             | `PUT`    | `/users/:id`               | Admin, SuperAdmin, Owner |
+| Delete user             | `DELETE` | `/users/:id`               | Admin, SuperAdmin, Owner |
+
+---
+
+### package.json
+
++++?code=demo/package.json&lang=json&title=PackageJSON
+
+---
+
+### tsconfig.json
+
++++?code=demo/tsconfig.json&lang=json&title=TsConfig
+
+---
+
+### Entry Point
+
++++?code=demo/src/index.ts&lang=typescript&title=Entry Point
+
+---
+
+### Domain Model
+
++++?code=demo/src/model/user.ts&lang=typescript&title=Domain Model
+
+---
+
+### Controller
+
++++?code=demo/src/controller/user-controller.ts&lang=typescript&title=Domain Model
+
 
 
