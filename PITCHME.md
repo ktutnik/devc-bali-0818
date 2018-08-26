@@ -221,13 +221,21 @@ new Plumier()
 
 ### Contoh Restful API 
 
-| Method   | Route                      | 
-| -------- | -------------------------- | 
-| `POST`   | `/users/login`             | 
-| `POST`   | `/users`                   | 
-| `GET`    | `/users?offset=0&limit=20` | 
-| `GET`    | `/users/:id`               | 
-| `PUT`    | `/users/:id`               | 
+Membuat NodeJS Restful API untuk memanajemen user
+
+Video [bit.ly/PlumRestful]
+
+---
+
+### Routes
+
+| Method | Route                      | Access   |
+| ------ | -------------------------- | -------- |
+| `POST` | `/users/login`             | P        |
+| `POST` | `/users`                   | P        |
+| `GET`  | `/users?offset=0&limit=20` | A, SA    |
+| `GET`  | `/users/:id`               | A, SA, O |
+| `PUT`  | `/users/:id`               | A, SA, O |
 
 ---?code=demo/package.json&lang=json&title=package.json
 
@@ -238,6 +246,3 @@ new Plumier()
 ---?code=demo/src/model/user.ts&lang=typescript&title=Domain Model
 
 ---?code=demo/src/controller/user-controller.ts&lang=typescript&title=Controller
-
-
-
