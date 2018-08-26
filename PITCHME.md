@@ -223,6 +223,11 @@ new Plumier()
 
 Membuat NodeJS Restful API untuk manajemen user data
 
+* Validation 
+* Authentication (JWT)
+* Authorization
+* MongoDB
+
 Video [bit.ly/PlumRestful]
 
 ---
