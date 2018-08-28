@@ -250,8 +250,20 @@ new Plumier()
 ![JWT](assets/images/refresh-token.png)
 
 ---
-### Authorisasi
+### Routes
 
+| Route                | Access                  |
+| -------------------- | ----------------------- |
+| `GET /auth/facebook` | public                  |
+| `GET /auth/refresh`  | AccessToken             |
+| `GET /users`         | Admin, SuperAdmin       |
+| `GET /users/me`      | User, Admin, SuperAdmin |
+
+---
+### Spesifikasi
+
+* Refresh token tidak boleh digunakan untuk mengakses private resource
+* Access token tidak boleh digunakan untuk mengakses /auth/refresh
 
 ---
 ### Implementasi
@@ -261,8 +273,12 @@ new Plumier()
 ---?code=demo/tsconfig.json&lang=json&title=tsconfig.json
 
 ---?code=demo/src/controller/auth-controller.ts&lang=typescript&title=Auth Controller
+@[19-29](Facebook login)
+@[10-17](Membuat token)
+@[31-37](Refresh token)
 
 ---?code=demo/src/controller/users-controller.ts&lang=typescript&title=Auth Controller
+@[5-18](Private resources)
 
 ---?code=demo/src/model/user.ts&lang=typescript&title=Domain Model
 
