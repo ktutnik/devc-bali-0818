@@ -10,12 +10,12 @@ Developer VetVision
 ---
 
 ### Plumier
-* 
 * Fokus pada *development happiness*
+  * Memakai TypeScript (autocomplete, in-editor refactor, static type check)
   * Built-in validation
   * Built-in authorization
-* Mebuat web api dengan cepat robust dan aman, tanpa bantuan generator
-* Performance (KoaJS) [bit.ly/PlumBench](https://bit.ly/PlumBench)
+* Performance 
+  * (KoaJS) [bit.ly/PlumBench](https://bit.ly/PlumBench)
 
 ---
 
