@@ -249,6 +249,9 @@ new Plumier()
 ![JWT](assets/images/refresh-token.png)
 
 ---
+### Implementasi
+
+---
 ### Routes
 
 | Route                | Access                  |
@@ -263,9 +266,6 @@ new Plumier()
 
 * Refresh token tidak boleh digunakan untuk mengakses private resource
 * Access token tidak boleh digunakan untuk mengakses /auth/refresh
-
----
-### Implementasi
 
 ---?code=demo/package.json&lang=json&title=package.json
 
