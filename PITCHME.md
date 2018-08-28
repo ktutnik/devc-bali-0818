@@ -284,4 +284,4 @@ new Plumier()
 ---?code=demo/src/index.ts&lang=typescript&title=Entry Point
 @[7](Install restful functionalities)
 @[8-10](Install mongoose functionalities)
-@[11-16](Install jwt authorization functionalities)
+@[11-14](Install jwt authorization functionalities)

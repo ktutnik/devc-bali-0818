@@ -11,8 +11,6 @@ new plumier_1.default()
 }))
     .set(new plumier_1.JwtAuthFacility({
     secret: config_1.TOKEN_SECRET,
-    //set global authorization agar RefreshToken tidak bisa digunakan
-    //untuk mengakses private resource
     global: plumier_1.authorize.role("User", "Admin", "SuperAdmin")
 }))
     .initialize()
