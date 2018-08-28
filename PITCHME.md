@@ -225,7 +225,6 @@ new Plumier()
 
 ### Contoh Autentikasi API dengan Refresh Token
 
-* Validasi 
 * Social Auth Facebook
 * Autorisasi
 * MongoDB
@@ -277,9 +276,12 @@ new Plumier()
 @[10-17](Membuat token)
 @[31-37](Refresh token)
 
----?code=demo/src/controller/users-controller.ts&lang=typescript&title=Auth Controller
+---?code=demo/src/controller/users-controller.ts&lang=typescript&title=Users Controller
 @[5-18](Private resources)
 
 ---?code=demo/src/model/user.ts&lang=typescript&title=Domain Model
 
 ---?code=demo/src/index.ts&lang=typescript&title=Entry Point
+@[7](Install restful functionalities)
+@[8-10](Install mongoose functionalities)
+@[11-16](Install jwt authorization functionalities)
