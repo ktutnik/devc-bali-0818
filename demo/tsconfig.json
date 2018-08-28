@@ -7,5 +7,6 @@
     //optional
     "strict": true,
     "esModuleInterop": true,
+    "importHelpers": true
   }
 }

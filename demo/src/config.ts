@@ -1,3 +1,1 @@
-
-
-export const SECRET = "lorem ipsum"
+export const TOKEN_SECRET = "lorem ipsum"

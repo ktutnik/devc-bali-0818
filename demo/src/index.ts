@@ -1,13 +1,21 @@
 import { MongooseFacility } from "@plumjs/mongoose";
-import Plumier, { JwtAuthFacility, RestfulApiFacility } from "@plumjs/plumier";
+import Plumier, { authorize, JwtAuthFacility, RestfulApiFacility } from "@plumjs/plumier";
 
-import { SECRET } from "./config";
-
+import { TOKEN_SECRET } from "./config";
+import { AuthMiddleware } from './middleware/auth-middleware';
 
 new Plumier()
     .set(new RestfulApiFacility())
-    .set(new MongooseFacility({uri: "mongodb://localhost:27017/user-demo"}))
-    .set(new JwtAuthFacility({secret: SECRET}))
+    .set(new MongooseFacility({
+        uri: "mongodb://localhost:27017/refresh-token-test"
+    }))
+    .set(new JwtAuthFacility({
+        secret: TOKEN_SECRET,
+        //set global authorization agar RefreshToken tidak bisa digunakan
+        //untuk mengakses private resource
+        global: authorize.role("User", "Admin", "SuperAdmin")
+    }))
+    .use(new AuthMiddleware())
     .initialize()
-    .then(koa => koa.listen(8000))
-    .catch(err => console.error(err))
+    .then(x => x.listen(8000))
+    .catch(e => console.error(e))

@@ -10,6 +10,7 @@ Developer VetVision
 ---
 
 ### Plumier
+* 
 * Fokus pada *development happiness*
   * Built-in validation
   * Built-in authorization
@@ -222,28 +223,31 @@ new Plumier()
 ```
 ---
 
-### Contoh Restful API 
+### Contoh Autentikasi API dengan Refresh Token
 
-Membuat NodeJS Restful API untuk manajemen user data
-
-* Validation 
-* Authentication (JWT)
-* Authorization
+* Validasi 
+* Social Auth Facebook
+* Autorisasi
 * MongoDB
-
-Video [bit.ly/PlumRestful](https://bit.ly/PlumRestful)
 
 ---
 
-### Routes
+### Pengamanan API dengan JWT 
 
-| Method | Route                      |
-| ------ | -------------------------- |
-| `POST` | `/users/login`             |
-| `POST` | `/users`                   |
-| `GET`  | `/users?offset=0&limit=20` |
-| `GET`  | `/users/:id`               |
-| `PUT`  | `/users/:id`               |
+![JWT](assets/images/jwt.png)
+
+
+---
+### Kenapa Perlu Refresh Token?
+
+* Token bisa di curi dengan traffic sniffing atau MITM
+* Long lived token yang sudah di curi memungkinkan attacker memakai token dalam jangka waktu yang lama.
+
+---
+
+### Refresh Token
+
+![JWT](assets/images/refresh-token.png)
 
 ---?code=demo/package.json&lang=json&title=package.json
 
@@ -251,15 +255,8 @@ Video [bit.ly/PlumRestful](https://bit.ly/PlumRestful)
 
 ---?code=demo/src/index.ts&lang=typescript&title=Entry Point
 
----?code=demo/src/model/user.ts&lang=typescript&title=Domain Model
-@[4](Role enum)
-@[6-19](User domain model - Persistent)
-@[21-22](Mongoose projection dan Model)
-@[24-30](Current login user domain model)
+---?code=demo/src/model/auth-model.ts&lang=typescript&title=Domain Model
 
 ---?code=demo/src/controller/user-controller.ts&lang=typescript&title=Controller
-@[11-22](POST /users/login)
-@[24-33](POST /users)
-@[35-41](GET /users?offset=0&limit=20)
-@[43-48](GET /users/:id)
-@[50-61](PUT /users/:id)
+
+---?code=demo/src/middleware/auth-middleware.ts&lang=typescript&title=Middleware

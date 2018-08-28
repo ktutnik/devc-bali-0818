@@ -1,5 +1,5 @@
 {
-  "name": "user-demo",
+  "name": "refresh-token-demo",
   "version": "1.0.0",
   "scripts": {
     "start": "nodemon src/index"
@@ -9,7 +9,11 @@
     "@plumjs/mongoose": "^0.1.1",
     "@plumjs/plumier": "^0.1.1",
     "@types/jsonwebtoken": "^7.2.8",
+    "@types/request-promise": "^4.1.42",
     "argon2": "^0.19.3",
-    "jsonwebtoken": "^8.3.0"
+    "jsonwebtoken": "^8.3.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "tslib": "^1.9.3"
   }
 }
