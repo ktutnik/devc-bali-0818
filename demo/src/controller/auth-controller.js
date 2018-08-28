@@ -5,11 +5,10 @@ const plumier_1 = require("@plumjs/plumier");
 const jsonwebtoken_1 = require("jsonwebtoken");
 const request_promise_1 = tslib_1.__importDefault(require("request-promise"));
 const config_1 = require("../config");
-const auth_model_1 = require("../model/auth-model");
-let AuthController = class AuthController {
+const user_1 = require("../model/user");
+class AuthController {
     async createTokens(userId, role) {
-        const tokenStatus = await new auth_model_1.TokenStatusModel({ isValid: true }).save();
-        const refreshToken = jsonwebtoken_1.sign({ userId, role: "RefreshToken", statusId: tokenStatus._id }, config_1.TOKEN_SECRET, { expiresIn: "30d" });
+        const refreshToken = jsonwebtoken_1.sign({ userId, role: "RefreshToken" }, config_1.TOKEN_SECRET, { expiresIn: "30d" });
         const accessToken = jsonwebtoken_1.sign({ userId, role }, config_1.TOKEN_SECRET, { expiresIn: "1h" });
         return { accessToken, refreshToken };
     }
@@ -18,18 +17,17 @@ let AuthController = class AuthController {
             qs: { fields: "id,name,email,picture.type(large)", access_token }
         });
         const fbUser = JSON.parse(json);
-        const savedUser = await auth_model_1.UserModel.findOne({ email: { $regex: fbUser.email, $options: "i" } }) ||
-            await new auth_model_1.UserModel(new auth_model_1.User(fbUser.name, fbUser.picture.data.url, fbUser.email, "User", false)).save();
+        const savedUser = await user_1.UserModel.findOne({ email: { $regex: fbUser.email, $options: "i" } }) ||
+            await new user_1.UserModel(new user_1.User(fbUser.name, fbUser.picture.data.url, fbUser.email, "User", false)).save();
         return this.createTokens(savedUser._id, savedUser.role);
     }
     async refresh(token) {
-        const user = await auth_model_1.UserModel.findById(token.userId);
+        const user = await user_1.UserModel.findById(token.userId);
         if (!user)
             throw new plumier_1.HttpStatusError(403);
-        await auth_model_1.TokenStatusModel.findByIdAndUpdate(token.statusId, { $set: { isValid: false } });
         return this.createTokens(user._id, user.role);
     }
-};
+}
 tslib_1.__decorate([
     plumier_1.route.ignore(),
     tslib_1.__metadata("design:type", Function),
@@ -48,10 +46,7 @@ tslib_1.__decorate([
     plumier_1.route.get(),
     tslib_1.__param(0, plumier_1.bind.user()),
     tslib_1.__metadata("design:type", Function),
-    tslib_1.__metadata("design:paramtypes", [auth_model_1.RefreshToken]),
+    tslib_1.__metadata("design:paramtypes", [Object]),
     tslib_1.__metadata("design:returntype", Promise)
 ], AuthController.prototype, "refresh", null);
-AuthController = tslib_1.__decorate([
-    plumier_1.route.root("/users/auth")
-], AuthController);
 exports.AuthController = AuthController;

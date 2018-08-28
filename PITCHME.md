@@ -249,14 +249,21 @@ new Plumier()
 
 ![JWT](assets/images/refresh-token.png)
 
+---
+### Authorisasi
+
+
+---
+### Implementasi
+
 ---?code=demo/package.json&lang=json&title=package.json
 
 ---?code=demo/tsconfig.json&lang=json&title=tsconfig.json
 
+---?code=demo/src/controller/auth-controller.ts&lang=typescript&title=Auth Controller
+
+---?code=demo/src/controller/users-controller.ts&lang=typescript&title=Auth Controller
+
+---?code=demo/src/model/user.ts&lang=typescript&title=Domain Model
+
 ---?code=demo/src/index.ts&lang=typescript&title=Entry Point
-
----?code=demo/src/model/auth-model.ts&lang=typescript&title=Domain Model
-
----?code=demo/src/controller/user-controller.ts&lang=typescript&title=Controller
-
----?code=demo/src/middleware/auth-middleware.ts&lang=typescript&title=Middleware

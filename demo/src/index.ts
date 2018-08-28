@@ -2,7 +2,6 @@ import { MongooseFacility } from "@plumjs/mongoose";
 import Plumier, { authorize, JwtAuthFacility, RestfulApiFacility } from "@plumjs/plumier";
 
 import { TOKEN_SECRET } from "./config";
-import { AuthMiddleware } from './middleware/auth-middleware';
 
 new Plumier()
     .set(new RestfulApiFacility())
@@ -15,7 +14,6 @@ new Plumier()
         //untuk mengakses private resource
         global: authorize.role("User", "Admin", "SuperAdmin")
     }))
-    .use(new AuthMiddleware())
     .initialize()
     .then(x => x.listen(8000))
     .catch(e => console.error(e))

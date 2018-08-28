@@ -4,7 +4,6 @@ const tslib_1 = require("tslib");
 const mongoose_1 = require("@plumjs/mongoose");
 const plumier_1 = tslib_1.__importStar(require("@plumjs/plumier"));
 const config_1 = require("./config");
-const auth_middleware_1 = require("./middleware/auth-middleware");
 new plumier_1.default()
     .set(new plumier_1.RestfulApiFacility())
     .set(new mongoose_1.MongooseFacility({
@@ -16,7 +15,6 @@ new plumier_1.default()
     //untuk mengakses private resource
     global: plumier_1.authorize.role("User", "Admin", "SuperAdmin")
 }))
-    .use(new auth_middleware_1.AuthMiddleware())
     .initialize()
     .then(x => x.listen(8000))
     .catch(e => console.error(e));
