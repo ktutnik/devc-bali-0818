@@ -1,11 +1,17 @@
-## Plumier
-Delightful NodeJS Web Api Framework powered by KoaJs and TypeScript
+## Plumier dan Implementasi Refresh Token
 
 ---
 
 I Ketut Sandiarsa
 
 Developer VetVision
+
+---
+
+### Open Source Contributor
+* Inversify collaborator
+* My Own IoC Container
+* Benalu
 
 ---
 
@@ -16,12 +22,13 @@ Developer VetVision
   * Built-in authorization
 * Performance 
   * (KoaJS) [bit.ly/PlumBench](https://bit.ly/PlumBench)
+* Unopinionated
 
 ---
 
 ### Framework Sejenis
 * LoopBack 4
-* NestJS
+* NestJS (Angular-like API)
 * TypeStack/Routing Controller
 
 ---
