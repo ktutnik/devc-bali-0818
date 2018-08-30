@@ -275,14 +275,18 @@ new Plumier()
 * Refresh token tidak boleh digunakan untuk mengakses private resource
 * Access token tidak boleh digunakan untuk mengakses /auth/refresh
 
+### Files
+
+![Static-Analisis](assets/images/files.png)
+
 ---?code=demo/package.json&lang=json&title=package.json
 
 ---?code=demo/tsconfig.json&lang=json&title=tsconfig.json
 
 ---?code=demo/src/controller/auth-controller.ts&lang=typescript&title=Auth Controller
-@[19-29](Facebook login)
+@[19-29](GET /auth/facebook Facebook login)
 @[10-17](Membuat token)
-@[31-37](Refresh token)
+@[31-37](GET /auth/refresh Merefresh token)
 
 ---?code=demo/src/controller/users-controller.ts&lang=typescript&title=Users Controller
 @[5-18](Private resources)
