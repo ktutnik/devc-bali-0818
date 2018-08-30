@@ -246,8 +246,9 @@ new Plumier()
 ---
 ### Kenapa Perlu Refresh Token?
 
-* Token bisa di curi dengan traffic sniffing atau MITM
-* Long lived token yang sudah di curi memungkinkan attacker memakai token dalam jangka waktu yang lama.
+* JWT Token sifatnya long-lived 
+* Long lived token berbahaya
+* Refresh token sifatnya short-lived
 
 ---
 
@@ -269,7 +270,7 @@ new Plumier()
 | `GET /users/me`      | User, Admin, SuperAdmin |
 
 ---
-### Spesifikasi
+### Spesifikasi Khusus
 
 * Refresh token tidak boleh digunakan untuk mengakses private resource
 * Access token tidak boleh digunakan untuk mengakses /auth/refresh
