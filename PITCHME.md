@@ -275,6 +275,8 @@ new Plumier()
 * Refresh token tidak boleh digunakan untuk mengakses private resource
 * Access token tidak boleh digunakan untuk mengakses /auth/refresh
 
+---
+
 ### Files
 
 ![Static-Analisis](assets/images/files.png)
