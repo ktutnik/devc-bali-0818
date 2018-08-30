@@ -248,7 +248,8 @@ new Plumier()
 
 * JWT Token sifatnya long-lived 
 * Long lived token berbahaya
-* Refresh token sifatnya short-lived
+* Access token sifatnya short-lived
+* Refresh token sifatnya long-lived tapi berubah setiap refresh
 
 ---
 
