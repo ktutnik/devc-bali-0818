@@ -318,3 +318,9 @@ new Plumier()
 @[7](Install restful functionalities)
 @[8-10](Install mongoose functionalities)
 @[11-14](Install jwt authorization functionalities)
+
+---
+
+## Tanya Jawab
+
+https://github.com/ktutnik/plumier
