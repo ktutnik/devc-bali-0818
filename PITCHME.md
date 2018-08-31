@@ -321,6 +321,4 @@ new Plumier()
 
 ---
 
-## Tanya Jawab
-
 https://github.com/ktutnik/plumier
