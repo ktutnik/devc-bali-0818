@@ -321,4 +321,10 @@ new Plumier()
 
 ---
 
+Repository
+
 https://github.com/ktutnik/plumier
+
+Dokumentasi
+
+https://github.com/ktutnik/plumier/wiki
