@@ -291,7 +291,7 @@ new Plumier()
 ---
 ### Spesifikasi Khusus
 
-* Refresh token tidak boleh digunakan untuk mengakses private resource
+* Refresh token (long lived) tidak boleh digunakan untuk mengakses private resource
 * Access token tidak boleh digunakan untuk mengakses /auth/refresh
 
 ---
