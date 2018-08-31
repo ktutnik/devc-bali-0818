@@ -43,9 +43,27 @@ Developer VetVision
 
 ---
 
+
 ### Static Analysis
 
 ![Static-Analisis](assets/images/static-analysis.png)
+
+---
+
+### Route by Convention
+
+```typescript
+class UsersController {
+  @route.get()
+  get(id:number, active:boolean, date:Date){  }
+
+  @route.post()
+  save(model:any){}
+}
+```
+
+@[2-3](GET /users/get?id=123&active=YES&date=2018-1-1)
+@[5-6](POST /users/save)
 
 ---
 
