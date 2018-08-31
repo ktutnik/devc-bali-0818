@@ -58,7 +58,7 @@ class UsersController {
   get(id:number, active:boolean, date:Date){  }
 
   @route.post()
-  save(model:any){}
+  save(name:string, email:string, birthDate:Date){}
 }
 ```
 
